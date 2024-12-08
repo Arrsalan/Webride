@@ -1,0 +1,138 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Cars</title>
+    <link rel="stylesheet" href="explore.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>WebRide</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="home.html">SERVICES</a></li>
+            <li><a href="home.html">GALLERY</a></li>
+            <li><a href="home.html">WHY US</a></li>
+            <li><a href="home.html">ABOUT US</a></li>
+            <li><a href="home.html">CONTACT US</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Car Details Section -->
+    <section class="car-details">
+        <h1 class="col">Available Cars</h1>
+        <div class="car-tiles">
+            <!-- Car 1 -->
+            <div class="car-tile">
+                <img src="outstation/creata.jpg" alt="Hyundai Creta">
+                <div class="car-info">
+                    <h2>Hyundai Creta</h2>
+                    <p>Color: Red</p>
+                    <p>Type: SUV</p>
+                    <p>Price: ₹15/km</p>
+                </div>
+            </div>
+            <!-- Car 2 -->
+            <div class="car-tile">
+                <img src="outstation/harrier.jpg" alt="Tata Harrier">
+                <div class="car-info">
+                    <h2>Tata Harrier</h2>
+                    <p>Color: Black</p>
+                    <p>Type: Sedan</p>
+                    <p>Price: ₹20/km</p>
+                </div>
+            </div>
+            <!-- Car 3 -->
+            <div class="car-tile">
+                <img src="outstation/scorpio.jpg" alt="Mahindra Scorpio">
+                <div class="car-info">
+                    <h2>Mahindra Scorpio</h2>
+                    <p>Color: Blue</p>
+                    <p>Type: Hatchback</p>
+                    <p>Price: ₹12/km</p>
+                </div>
+            </div>
+            <!-- Car 4 -->
+            <div class="car-tile">
+                <img src="outstation/seltos.jpg" alt="Kia Seltos">
+                <div class="car-info">
+                    <h2>Kia Seltos</h2>
+                    <p>Color: White</p>
+                    <p>Type: Luxury</p>
+                    <p>Price: ₹18/km</p>
+                </div>
+            </div>
+            <!-- Car 5 -->
+            <div class="car-tile">
+                <img src="outstation/thar.jpg" alt="Mahindra Thar">
+                <div class="car-info">
+                    <h2>Mahindra Thar</h2>
+                    <p>Color: White</p>
+                    <p>Type: Off-Road</p>
+                    <p>Price: ₹22/km</p>
+                </div>
+            </div>
+            <!-- Car 6 -->
+            <div class="car-tile">
+                <img src="outstation/virtus.jpg" alt="Volkswagen Virtus">
+                <div class="car-info">
+                    <h2>Volkswagen Virtus</h2>
+                    <p>Color: White</p>
+                    <p>Type: Sedan</p>
+                    <p>Price: ₹18/km</p>
+                </div>
+            </div>
+            <!-- Car 7 -->
+            <div class="car-tile">
+                <img src="outstation/xuv700.jpg" alt="Mahindra XUV700">
+                <div class="car-info">
+                    <h2>Mahindra XUV700</h2>
+                    <p>Color: White</p>
+                    <p>Type: SUV</p>
+                    <p>Price: ₹25/km</p>
+                </div>
+            </div>
+        
+    
+
+        <div class="car-tile">
+                <img src="outstation/safari.jpg" alt="Car Image">
+                <div class="car-info">
+                    <h2>XUV 700</h2>
+                    <p>Color: White</p>
+                    <p>Type: Luxury</p>
+                    <p>Price:₹25/km</p>
+                </div>
+            </div>
+           
+        </div>
+    </section>
+
+    <!-- Book Now Button -->
+    <div class="book-now">
+        <button><a href="book.html">Book Now</a></button>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+    
+</script>
+
+</body>
+</html>

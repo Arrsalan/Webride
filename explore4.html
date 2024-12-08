@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Cars</title>
+    <link rel="stylesheet" href="explore.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>WebRide</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="home.html">SERVICES</a></li>
+            <li><a href="home.html">GALLERY</a></li>
+            <li><a href="home.html">WHY US</a></li>
+            <li><a href="home.html">ABOUT US</a></li>
+            <li><a href="home.html">CONTACT US</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Car Details Section -->
+    <section class="car-details">
+        <h1 class="col">Available Cars</h1>
+        <div class="car-tiles">
+            <!-- Car 1 -->
+            <div class="car-tile">
+                <img src="periodic/ertigaertigarightfrontthreequarter.jpg" alt="Maruti Suzuki Ertiga">
+                <div class="car-info">
+                    <h2>Maruti Suzuki Ertiga</h2>
+                    <p>Color: Red</p>
+                    <p>Type: SUV</p>
+                    <p>Price: ₹29/km</p>
+                </div>
+            </div>
+            <!-- Removed Car On Hire For Corporate -->
+            
+            <!-- Car 2 -->
+            <div class="car-tile">
+                <img src="periodic/innova hycross.jpg" alt="Toyota Innova Hycross">
+                <div class="car-info">
+                    <h2>Toyota Innova Hycross</h2>
+                    <p>Color: Nevyblue</p>
+                    <p>Type: Luxury</p>
+                    <p>Price: ₹35/km</p>
+                    
+                </div>
+            </div>
+            <!-- Car 3 -->
+            <div class="car-tile">
+                <img src="periodic/kia carens.jpg" alt="Kia Carens">
+                <div class="car-info">
+                    <h2>Kia Carens</h2>
+                    <p>Color: Black</p>
+                    <p>Type: Hatchback</p>
+                    <p>Price: ₹39/km</p>
+                </div>
+            </div>
+            <!-- Car 4 -->
+            <div class="car-tile">
+                <img src="periodic/scorpio classic.jpg" alt="Mahindra Scorpio Classic">
+                <div class="car-info">
+                    <h2>Mahindra Scorpio Classic</h2>
+                    <p>Color: Red</p>
+                    <p>Type: SUV</p>
+                    <p>Price: ₹43/km</p>
+                </div>
+            </div>
+            <!-- Car 5 -->
+            <div class="car-tile">
+                <img src="periodic/thar roxx.jpg" alt="Mahindra Thar Roxx">
+                <div class="car-info">
+                    <h2>Mahindra Thar Roxx</h2>
+                    <p>Color: White-black</p>
+                    <p>Type: Off-Road</p>
+                    <p>Price: ₹35/km</p>
+                </div>
+            </div>
+            <!-- Car 6 -->
+            <div class="car-tile">
+                <img src="periodic/innovacrystainnovacrystarightfrontthreequarter.png" alt="Toyota Innova Crysta">
+                <div class="car-info">
+                    <h2>Toyota Innova Crysta</h2>
+                    <p>Color: White</p>
+                    <p>Type: Luxury</p>
+                    <p>Price: ₹45/km</p>
+                </div>
+            </div>
+            <!-- Car 7 -->
+            <div class="car-tile">
+                <img src="periodic/triber.jpg" alt="Renault Triber">
+                <div class="car-info">
+                    <h2>Renault Triber</h2>
+                    <p>Color: Yellowgolden</p>
+                    <p>Type: MUV</p>
+                    <p>Price: ₹39/km</p>
+                </div>
+            </div>
+            <div class="car-tile">
+                <img src="periodic/fortuner.jpg" alt="Renault Triber">
+                <div class="car-info">
+                    <h2>Toyota Fortuner</h2>
+                    <p>Color: White</p>
+                    <p>Type: MUV</p>
+                    <p>Price: ₹59/km</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Now Button -->
+    <div class="book-now">
+        <button><a href="book.html">Book Now</a></button>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

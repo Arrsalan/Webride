@@ -1,0 +1,442 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;600;700&family=Lora:wght@400;500;600&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Lora', serif; /* Elegant serif font for body text */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    
+
+}
+
+
+
+#logoweb {
+    color: red;
+    font-family: 'Montserrat', sans-serif; /* Bold Montserrat for the logo */
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    height: 20px;
+    width: 98%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 20px;
+    z-index: 1000;
+}
+.register-btn{
+    
+    font-size: 20px;
+}
+.btn{
+    border-radius: 18px;
+}
+
+.logo h1 {
+    color: #fff;
+    font-size: 28px; /* Slightly larger font size for logo */
+    letter-spacing: 1px; /* Space between letters */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #fdf7f7;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500; /* Medium weight for links */
+    transition: transform 0.3s ease, color 0.3s ease; /* Added color transition */
+}
+
+.nav-links a:hover {
+    transform: scale(1.1);
+    color: #bf3737; /* Light color on hover */
+    text-decoration: underline;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.hamburger span {
+    background-color: #fff;
+    height: 3px;
+    line-height: 20px;
+    width: 25px;
+    margin: 3px 0;
+}
+.hamburger span:hover{
+    scale: 1.1;
+}
+
+/* Header Section */
+.header {
+    position: relative;
+    width: 100%;
+    height: 60hv; /* Set a fixed height that scales with viewport height */
+    overflow: hidden; /* Ensure no overflow */
+    padding-bottom: 10px;
+}
+
+.header-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the header */
+}
+
+.header-text {
+    position: absolute;
+    top: 67%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-family: 'Roboto', sans-serif; /* Using Roboto for header text */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    padding: 0 20px; /* Add padding for smaller screens */
+    width: 100%; /* Ensure it uses full width */
+    box-sizing: border-box;
+}
+
+.header-text h1 {
+    font-size: 40px;
+    font-weight: 700; /* Bold weight */
+    margin-bottom: 10px;
+    letter-spacing: 1px; /* Slightly spaced letters */
+    color:#fdf7f7
+}
+
+.header-text p {
+    font-size: 30px;
+    font-weight: 300; /* Lighter weight for description */
+    color: white;
+}
+
+/* Services Section */
+.services {
+    padding: 50px 20px;
+    background-color:rgb(108, 104, 104);
+}
+
+#serv {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif; /* Using Poppins for headings */
+    color: white;
+}
+
+.tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+.tile {
+    width: 22%;
+    background-color: rgb(208, 201, 188);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.tile:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px);
+}
+
+.tile img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.tile h2 {
+    margin: 15px 0;
+    font-size: 20px;
+    font-weight: 600; /* Semi-bold weight for titles */
+    color: #333; /* Dark color for titles */
+}
+
+.tile p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* Buttons */
+button a {
+    text-decoration: none;
+    color: white;
+}
+
+button {
+    background-color: rgba(185, 243, 104, 0.656);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor:pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform for hover */
+    font-family: 'Poppins', sans-serif; /* Using Poppins for button text */
+}
+
+button:hover {
+    background-color: #009bb3;
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Gallery Section */
+.gallery {
+    
+    background-color:rgb(108, 104, 104);
+    padding-bottom: 20px;
+
+}
+
+#gallery {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: white;
+   
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.gallery-item {
+    width: 22%;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* About Section */
+.about {
+    background-color: #f9f9f9;
+}
+
+/* Full-Width Image for About Us */
+.about-section {
+    position: relative;
+}
+#para{
+    color: rgb(245, 241, 241);
+}
+
+.about-section img {
+    width: 100%; /* Full width */
+    height: 20%; /* Maintain aspect ratio */
+    border-radius: 10px 10px 0 0; /* Rounded top corners */
+}
+
+/* About Text Below the Image */
+.about-text {
+    padding: 20px;
+    text-align: center; /* Center text */
+}
+
+.about-text h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif; /* Using Poppins for about text */
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Why Us Section */
+.why-us {
+    background-color:rgb(108, 104, 104);
+    padding: 50px 20px;
+    text-align: center;
+    
+}
+
+.why-us h1 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif; /* Using Poppins for why us heading */
+}
+
+.why-us-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.why-us-item {
+    width: 22%;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-us-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px);
+}
+
+.why-us-item img {
+    width: 40%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 5px;
+    
+    
+
+}
+
+/* Contact Us Section */
+.contact-us {
+    background-color:rgb(108, 104, 104);
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact-us h1 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #333;
+    font-family: 'Poppins', sans-serif; /* Using Poppins for contact heading */
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.contact-item {
+    width: 22%;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.contact-item img {
+    width: 100%;
+    height: 100px; /* Adjusted height to prevent clipping */
+    object-fit: contain; /* Keep the image within boundaries */
+    border-radius: 5px;
+    
+}
+
+.contact-item h2 {
+    margin-top: 15px;
+    font-size: 22px;
+    color: #333;
+    font-family: 'Poppins', sans-serif; /* Using Poppins for contact item title */
+}
+
+.contact-item p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+       
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .tile, .gallery-item,  .contact-item, .why-us-item {
+        width: 45%;
+    }
+    .about-section img{
+        width: 100%;
+    }
+    .about-section {
+        flex-direction: column;
+    }
+    .about-text {
+        width: 100%;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .header-text h1 {
+        font-size: 32px;
+        padding: 0 10px;
+    }
+
+    .header-text p {
+        font-size: 18px;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px){ 
+    .tile, .gallery-item, .contact-item, .why-us-item {
+        width: 100%;}
+    }
+
+    .about-text h2 {
+        font-size: 24px;
+    }
+
+    .about-text p {
+        font-size: 16px;
+    }

@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Cars</title>
+    <link rel="stylesheet" href="explore.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>WebRide</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="home.html">SERVICES</a></li>
+            <li><a href="home.html">GALLERY</a></li>
+            <li><a href="home.html">WHY US</a></li>
+            <li><a href="home.html">ABOUT US</a></li>
+            <li><a href="home.html">CONTACT US</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+
+
+<!-- Car Details Section -->
+<section class="car-details">
+<h1 class="col">Available Cars</h1>
+<div class="car-tiles">
+    <!-- Car 1 Removed -->
+
+    <!-- Car 2 -->
+    <div class="car-tile">
+        <img src="wedding/bmw 3 series.jpg" alt="BMW 3 Series">
+        <div class="car-info">
+            <h2>BMW 3 Series</h2>
+            <p>Color: Red</p>
+            <p>Type: Sedan</p>
+            <p>Price: ₹50/km</p>
+        </div>
+    </div>
+    <!-- Car 3 -->
+    <div class="car-tile">
+        <img src="wedding/bmw x1.jpg" alt="BMW X1">
+        <div class="car-info">
+            <h2>BMW X1</h2>
+            <p>Color: Blue</p>
+            <p>Type: Luxury</p>
+            <p>Price: ₹70/km</p>
+        </div>
+    </div>
+    <!-- Car 4 -->
+    <div class="car-tile">
+        <img src="wedding/jaguar f pace.jpg" alt="Jaguar F-Pace">
+        <div class="car-info">
+            <h2>Jaguar F-Pace</h2>
+            <p>Color: Grey</p>
+            <p>Type: Hatchback</p>
+            <p>Price: ₹100/km</p>
+        </div>
+    </div>
+    <!-- Car 5 -->
+    <div class="car-tile">
+        <img src="wedding/mercedese a class.jpg" alt="Mercedes A-Class">
+        <div class="car-info">
+            <h2>Mercedes A-Class</h2>
+            <p>Color: Grey</p>
+            <p>Type: Luxury</p>
+            <p>Price: ₹90/km</p>
+        </div>
+    </div>
+    <!-- Car 6 -->
+    <div class="car-tile">
+        <img src="wedding/mercedese c class.jpg" alt="Mercedes C-Class">
+        <div class="car-info">
+            <h2>Mercedes C-Class</h2>
+            <p>Color: Blue</p>
+            <p>Type: Luxury</p>
+            <p>Price: ₹95/km</p>
+        </div>
+    </div>
+    <!-- Car 7 -->
+    <div class="car-tile">
+        <img src="wedding/mini cooper.jpg" alt="Mini Cooper">
+        <div class="car-info">
+            <h2>Mini Cooper</h2>
+            <p>Color: White-aqua</p>
+            <p>Type: Luxury</p>
+            <p>Price: ₹120/km</p>
+        </div>
+    </div>
+    <!-- Car 8 -->
+    <div class="car-tile">
+        <img src="wedding/range rover sport.jpg" alt="Range Rover Sport">
+        <div class="car-info">
+            <h2>Range Rover Sport</h2>
+            <p>Color: Sine-Brown</p>
+            <p>Type: Luxury</p>
+            <p>Price: ₹150/km</p>
+        </div>
+    </div>
+    <div class="car-tile">
+        <img src="wedding/mercedese a class.jpg" alt="Range Rover Sport">
+        <div class="car-info">
+            <h2>Range Rover Sport</h2>
+            <p>Color: Grey</p>
+            <p>Type: Luxury</p>
+            <p>Price: ₹159/km</p>
+        </div>
+</div>
+</div>
+</section>
+<div class="book-now">
+    <button><a href="book.html">Book Now</a></button>
+</div>
+
+
+<script>
+    // Mobile Menu Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+    });
+
+</script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Car Booking Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: #007bff;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .add-car-btn {
+            background-color: #28a745;
+            margin-top: 15px;
+        }
+        .add-car-btn:hover {
+            background-color: #218838;
+        }
+        .car-section {
+            border-top: 2px solid black;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+        .form-section {
+            padding: 10px 20px;
+            background-color: #f7f7f7;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+        #summary {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9f7ef;
+            border-radius: 5px;
+            display: none;
+        }
+        #summary h3 {
+            margin-top: 0;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Book Multiple Cars</h1>
+
+    <form id="bookingForm">
+        <div class="form-section">
+            <h2>Personal Information</h2>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        </div>
+
+        <div id="carsContainer">
+            <div class="car-section" id="car1">
+                <div class="form-section">
+                    <h2>Car 1 Details</h2>
+
+                    <label for="carType1">Car Type</label>
+                    <select id="carType1" name="carType1" required>
+                        <option value="">Select Car Type</option>
+                        <option value="Sedan">Sedan</option>
+                        <option value="SUV">SUV</option>
+                        <option value="Hatchback">Hatchback</option>
+                        <option value="Truck">Truck</option>
+                    </select>
+
+                    <label for="carColor1">Car Color</label>
+                    <select id="carColor1" name="carColor1" required>
+                        <option value="">Select Car Color</option>
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                        <option value="Red">Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Silver">Silver</option>
+                    </select>
+
+                    <label for="pickupLocation1">Pickup Location</label>
+                    <input type="text" id="pickupLocation1" name="pickupLocation1" placeholder="Enter pickup location" required>
+
+                    <label for="pickupDate1">Pickup Date</label>
+                    <input type="date" id="pickupDate1" name="pickupDate1" required>
+
+                    <label for="dropoffLocation1">Drop-off Location</label>
+                    <input type="text" id="dropoffLocation1" name="dropoffLocation1" placeholder="Enter drop-off location" required>
+
+                    <label for="dropoffDate1">Drop-off Date</label>
+                    <input type="date" id="dropoffDate1" name="dropoffDate1" required>
+
+                    <label for="requests1">Additional Requests</label>
+                    <textarea id="requests1" name="requests1" rows="3" placeholder="Enter any additional requests (optional)"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="add-car-btn" id="addCarBtn">Add Another Car</button>
+
+        <label>
+            <input type="checkbox" id="terms" name="terms" required> I agree to the terms and conditions
+        </label>
+
+        <button type="submit">Submit Booking</button>
+    </form>
+
+    <div id="summary">
+        <h3>Booking Summary</h3>
+        <p><strong>Name:</strong> <span id="summaryName"></span></p>
+        <p><strong>Email:</strong> <span id="summaryEmail"></span></p>
+        <p><strong>Phone:</strong> <span id="summaryPhone"></span></p>
+        <p><strong>Total Cars Booked:</strong> <span id="carCount"></span></p>
+        <div id="carDetailsList"></div>
+    </div>
+</div>
+
+<script>
+    let carCount = 1;
+    const bookingData = {
+        personalInfo: {},
+        cars: []
+    };
+
+    document.getElementById('addCarBtn').addEventListener('click', function() {
+        carCount++;
+        const carSection = document.createElement('div');
+        carSection.classList.add('car-section');
+        carSection.id = `car${carCount}`;
+        carSection.innerHTML = `
+            <div class="form-section">
+                <h2>Car ${carCount} Details</h2>
+
+                <label for="carType${carCount}">Car Type</label>
+                <select id="carType${carCount}" name="carType${carCount}" required>
+                    <option value="">Select Car Type</option>
+                    <option value="Sedan">Sedan</option>
+                    <option value="SUV">SUV</option>
+                    <option value="Hatchback">Hatchback</option>
+                    <option value="Truck">Truck</option>
+                </select>
+
+                <label for="carColor${carCount}">Car Color</label>
+                <select id="carColor${carCount}" name="carColor${carCount}" required>
+                    <option value="">Select Car Color</option>
+                    <option value="Black">Black</option>
+                    <option value="White">White</option>
+                    <option value="Red">Red</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Silver">Silver</option>
+                </select>
+
+                <label for="pickupLocation${carCount}">Pickup Location</label>
+                <input type="text" id="pickupLocation${carCount}" name="pickupLocation${carCount}" placeholder="Enter pickup location" required>
+
+                <label for="pickupDate${carCount}">Pickup Date</label>
+                <input type="date" id="pickupDate${carCount}" name="pickupDate${carCount}" required>
+
+                <label for="dropoffLocation${carCount}">Drop-off Location</label>
+                <input type="text" id="dropoffLocation${carCount}" name="dropoffLocation${carCount}" placeholder="Enter drop-off location" required>
+
+                <label for="dropoffDate${carCount}">Drop-off Date</label>
+                <input type="date" id="dropoffDate${carCount}" name="dropoffDate${carCount}" required>
+
+                <label for="requests${carCount}">Additional Requests</label>
+                <textarea id="requests${carCount}" name="requests${carCount}" rows="3" placeholder="Enter any additional requests (optional)"></textarea>
+            </div>
+        `;
+        document.getElementById('carsContainer').appendChild(carSection);
+    });
+
+    document.getElementById('bookingForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        // Collect personal information
+        bookingData.personalInfo.name = document.getElementById('name').value;
+        bookingData.personalInfo.email = document.getElementById('email').value;
+        bookingData.personalInfo.phone = document.getElementById('phone').value;
+
+        // Collect car details
+        bookingData.cars = [];
+        for (let i = 1; i <= carCount; i++) {
+            const carType = document.getElementById(`carType${i}`).value;
+            const carColor = document.getElementById(`carColor${i}`).value;
+            const pickupLocation = document.getElementById(`pickupLocation${i}`).value;
+            const pickupDate = document.getElementById(`pickupDate${i}`).value;
+            const dropoffLocation = document.getElementById(`dropoffLocation${i}`).value;
+            const dropoffDate = document.getElementById(`dropoffDate${i}`).value;
+            const requests = document.getElementById(`requests${i}`).value;
+
+            bookingData.cars.push({
+                carType, carColor, pickupLocation, pickupDate, dropoffLocation, dropoffDate, requests
+            });
+        }
+
+        // Display the summary
+        document.getElementById('summaryName').innerText = bookingData.personalInfo.name;
+        document.getElementById('summaryEmail').innerText = bookingData.personalInfo.email;
+        document.getElementById('summaryPhone').innerText = bookingData.personalInfo.phone;
+        document.getElementById('carCount').innerText = bookingData.cars.length;
+
+        const carDetailsList = document.getElementById('carDetailsList');
+        carDetailsList.innerHTML = '';  // Clear previous list if any
+        bookingData.cars.forEach((car, index) => {
+            const carDetails = document.createElement('p');
+            carDetails.innerHTML = `
+                <strong>Car ${index + 1}:</strong> ${car.carType} (${car.carColor}) - Pickup: ${car.pickupLocation} (${car.pickupDate}), Drop-off: ${car.dropoffLocation} (${car.dropoffDate})
+            `;
+            carDetailsList.appendChild(carDetails);
+        });
+
+        document.getElementById('summary').style.display = 'block';
+        
+    });
+</script>
+
+</body>
+</html>

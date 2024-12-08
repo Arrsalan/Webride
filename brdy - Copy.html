@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffe3e3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            position: relative;
+            width: 350px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: fade-in 2s ease-in;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #ff6b81;
+        }
+
+        .message {
+            font-size: 18px;
+            color: #555;
+            margin-top: 15px;
+            margin-bottom: 30px;
+        }
+
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: #ff6b81;
+            margin: 0 auto;
+            transform: rotate(-45deg);
+            display: none; /* Initially hidden */
+            margin-bottom: 25px; /* Space below the heart */
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #ff6b81;
+            border-radius: 50px;
+        }
+
+        .heart::before {
+            top: -50px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 50px;
+            top: 0;
+        }
+
+        .heart span {
+            position: absolute;
+            top: 40%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            font-size: 16px; /* Adjusted font size */
+            color: white;
+            font-weight: bold;
+            text-align: center; /* Center text */
+            line-height: 1.2; /* Line height for better spacing */
+        }
+
+        #hidden-message {
+            display: none;
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .emoji {
+            font-size: 24px;
+        }
+
+        @keyframes fade-in {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            background-color: #ff6b81;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #ff4a61;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Happy Birthday!</h1>
+    <p class="message">Wishing you all the love, happiness, and joy in the world on your special day!</p>
+    
+    <button class="button" id="revealButton">Reveal Heart</button> <!-- Button to reveal heart -->
+    
+    <div class="heart" id="heart">
+        <span>tutu</span> <!-- Special word in center of heart -->
+    </div>
+
+    <p id="hidden-message">
+        🎉 Happy Birthday! May your day be filled with joy and laughter! 🎂 Enjoy every moment! 🥳✨
+    </p>
+</div>
+
+<script>
+    // Add click event to the button
+    document.getElementById('revealButton').addEventListener('click', function() {
+        // Show the heart and message
+        document.getElementById('heart').style.display = 'block'; // Show the heart
+        const message = document.getElementById('hidden-message');
+        message.style.display = 'block'; // Show the message
+        message.classList.add('emoji'); // Optionally add class for additional styling
+        this.style.display = 'none'; // Hide the button after click
+    });
+</script>
+
+</body>
+</html>

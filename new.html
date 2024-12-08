@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Cars</title>
+    <link rel="stylesheet" href="explore.css">
+</head>
+<body>
+
+<script>
+    // Example check for login status (using localStorage)
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+    if (isLoggedIn === 'true') {
+        // User is logged in, redirect to login page
+        window.location.href = "login.html";
+    } else {
+        // User is not logged in, redirect to register page
+        window.location.href = "register.html";
+    }
+</script>
+
+<!-- Rest of your page content -->
+
+</body>
+</html>
